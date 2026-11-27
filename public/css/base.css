@@ -1,0 +1,27 @@
+:root{--sea:#0b78ad;--ink:#eaf6ff;--gold:#ffd23f;--gold-dk:#c99a00;--brown:#3b2400;--navy:rgba(6,41,74,.72);--cell:36px;--lab:26px}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{min-height:100vh;color:var(--ink);font:400 16px/1.4 "Exo 2",system-ui,sans-serif;text-align:center;
+  background:
+   radial-gradient(circle at 18% 12%,rgba(255,255,255,.28),transparent 42%),
+   radial-gradient(circle at 82% 24%,rgba(255,255,255,.2),transparent 38%),
+   radial-gradient(circle at 50% 100%,rgba(255,255,255,.14),transparent 50%),var(--sea);
+  background-attachment:fixed;overflow-x:hidden;padding:20px 12px 48px}
+.cloud{position:fixed;z-index:0;background:rgba(255,255,255,.5);border-radius:50%;filter:blur(28px);pointer-events:none}
+.cloud-a{width:340px;height:110px;top:9%;left:-60px}
+.cloud-b{width:420px;height:130px;top:46%;right:-110px}
+.app-header,main{position:relative;z-index:1}
+button,input{font:inherit}
+h2,h3{margin:0}
+.btn{border:0;border-radius:12px;padding:10px 18px;font-weight:600;cursor:pointer;color:var(--ink);transition:transform .08s,box-shadow .08s,filter .15s}
+.btn:hover:not(:disabled){filter:brightness(1.06)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-gold{background:var(--gold);color:var(--brown);font-family:Bungee,sans-serif;letter-spacing:.5px}
+.btn-light{background:#9fdcff;color:#06294a;font-family:Bungee,sans-serif}
+.btn-ghost{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35)}
+.btn-coral{background:#ff6b5e;color:#fff;font-family:Bungee,sans-serif}
+.btn-3d{box-shadow:0 5px 0 var(--gold-dk)}
+.btn-3d:active:not(:disabled){transform:translateY(4px);box-shadow:0 1px 0 var(--gold-dk)}
+.btn-block{width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Sunk My Battle Ships!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/lobby.css">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+<div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+
+<div id="wallet" class="wallet" hidden>👤 <span id="walletName"></span> · 🪙 <span id="walletCoins">0</span></div>
+
+<header class="app-header">
+  <h1 class="title">⚓ You Sunk My Battle Ships!</h1>
+  <p id="status" class="status">Welcome aboard, captain.</p>
+  <div id="codeBadge" class="badge" hidden></div>
+  <div id="scoreboard" class="scoreboard"></div>
+</header>
+
+<main>
+  <section id="lobby" class="panel lobby">
+    <h2>⚓ Command deck</h2>
+    <label class="field">Your name <input id="nameInput" maxlength="16" autocomplete="off" placeholder="Captain"></label>
+    <label class="field">Stake (coins) <input id="stakeInput" type="number" min="0" step="1" value="10"></label>
+    <button id="createBtn" class="btn btn-gold btn-block">Create game</button>
+    <div class="divider"><span>or join a friend</span></div>
+    <div class="join-row">
+      <input id="codeInput" class="code-input" maxlength="4" placeholder="ABCD" autocomplete="off">
+      <button id="joinBtn" class="btn btn-light">Join</button>
+    </div>
+    <div id="offer" class="offer" hidden>
+      <p id="offerText"></p>
+      <div class="offer-actions">
+        <button id="offerJoin" class="btn btn-gold">Join</button>
+        <button id="offerCancel" class="btn btn-ghost">Cancel</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="game" class="game" hidden>
+    <div id="tray" class="tray" hidden></div>
+    <div class="controls">
+      <button id="rotateBtn" class="btn btn-ghost" hidden>Rotate (R)</button>
+      <button id="shuffleBtn" class="btn btn-ghost" hidden>Shuffle ships</button>
+      <button id="readyBtn" class="btn btn-gold" hidden disabled>Ready!</button>
+    </div>
+    <div class="boards">
+      <div class="board-col"><h3 class="tab">My ships</h3><div id="myBoard" class="board mine"></div></div>
+      <div class="board-col"><h3 class="tab">Opponent's ships</h3><div id="enemyBoard" class="board enemy"></div></div>
+    </div>
+    <div class="actions">
+      <button id="surrenderBtn" class="btn btn-coral" hidden>🏳️ Surrender</button>
+      <button id="againBtn" class="btn btn-gold btn-3d" hidden>Play again</button>
+    </div>
+  </section>
+</main>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
