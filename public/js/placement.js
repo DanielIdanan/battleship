@@ -18,7 +18,7 @@ export function renderFleet() {
     const chip = document.createElement('button');
     chip.className = 'chip' + (i === state.sel ? ' selected' : '') + (state.fleet[i] ? ' placed' : '');
     chip.title = `${SHIPS[i]} (${size})`;
-    chip.innerHTML = `<img src="/assets/ships/${SHIPS[i]}_h.png" alt="${SHIPS[i]}" style="width:${size * 24}px">`;
+    chip.innerHTML = `<img src="assets/ships/${SHIPS[i]}_h.png" alt="${SHIPS[i]}" style="width:${size * 24}px">`;
     chip.onclick = () => { state.sel = i; if (state.fleet[i]) state.fleet[i] = null; renderFleet(); };
     $('tray').appendChild(chip);
   });

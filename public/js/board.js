@@ -23,7 +23,7 @@ export function addSprite(boardId, i, cells) {
   const horiz = cells.length < 2 || cells[0][1] === cells[1][1], [x, y] = cells[0], n = cells.length;
   const img = document.createElement('img');
   img.className = 'ship'; img.alt = ''; img.draggable = false;
-  img.src = `/assets/ships/${SHIPS[i]}_${horiz ? 'h' : 'v'}.png`;
+  img.src = `assets/ships/${SHIPS[i]}_${horiz ? 'h' : 'v'}.png`;
   img.style.left = `calc(${x} * var(--cell))`;
   img.style.top = `calc(${y} * var(--cell))`;
   img.style.width = `calc(${horiz ? n : 1} * var(--cell))`;

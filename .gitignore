@@ -1,0 +1,4 @@
+node_modules/
+battleship.db
+battleship.db-*
+.DS_Store

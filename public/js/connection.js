@@ -1,5 +1,12 @@
 // public/js/connection.js - server connection (WebSocket)
-export const stream = new WebSocket(`${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws`);
+// Leave SERVER empty when the server also serves this page (npm start).
+// For GitHub Pages, put the deployed server address here, e.g. 'https://your-game.onrender.com'
+const SERVER = '';
+
+const wsUrl = SERVER
+  ? SERVER.replace(/^http/, 'ws').replace(/\/$/, '') + '/ws'
+  : `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws`;
+export const stream = new WebSocket(wsUrl);
 
 const listeners = {};
 stream.addEventListener('message', (e) => {
